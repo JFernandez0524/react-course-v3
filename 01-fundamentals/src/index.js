@@ -1,23 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
-import './index.css';
-
-import { books } from './books';
-import Book from './Book';
+import './css/index.css';
 
 function BookList() {
   return (
-    <>
-      <h1>amazon best sellers</h1>
-      <section className='booklist'>
-        {books.map((book) => {
-          return <Book {...book} key={book.id} />;
-        })}
-      </section>
-    </>
+    <section className='booklist'>
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
   );
 }
+
+const Book = () => {
+  const title = 'Dog Man: Twenty Thousand Fleas Under the Sea';
+  const author = 'Dav Pilkey';
+
+  return (
+    <article className='book'>
+      <img src='./images/dog-man.jpeg' alt='' />
+      <h2>{title}</h2>
+      <h4>{author}</h4>
+    </article>
+  );
+};
+
+// const Image = () => ;
+// const Title = () => {
+//   };
+// const Author = () => (
+
+// );
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
