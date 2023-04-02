@@ -18,13 +18,37 @@ const books = [
 function BookList() {
   return (
     <section className='booklist'>
+      <EventExamples />
       {books.map((book) => {
-        const { title, author, img } = book;
-        return <Book key={title} title={title} author={author} img={img} />;
+        //pass the object and spread object properties
+        return <Book key={book.title} {...book} />;
       })}
     </section>
   );
 }
+
+const EventExamples = () => {
+  const handleFormInput = () => {
+    console.log('handle form input');
+  };
+  const handleButtonClick = () => {
+    alert('handle button click');
+  };
+  return (
+    <section>
+      <form>
+        <h2>Typical Form</h2>
+        <input
+          type='text'
+          name='example'
+          onChange={handleFormInput}
+          style={{ margin: '1rem 0' }}
+        />
+      </form>
+      <button onClick={handleButtonClick}>click me</button>
+    </section>
+  );
+};
 
 const Book = (props) => {
   const { img, title, author } = props;
