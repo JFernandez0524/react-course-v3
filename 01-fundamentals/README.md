@@ -780,8 +780,7 @@ function BookList() {
       <Book
         author={firstBook.author}
         title={firstBook.title}
-        img={firstBook.img}
-      >
+        img={firstBook.img}>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque
           repudiandae inventore eos qui animi sed iusto alias eius ea sapiente.
